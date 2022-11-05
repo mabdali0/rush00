@@ -15,7 +15,7 @@ void	ft_putchar(char a)
 //Pour resumer elle ecrit en premier le caractere de gauche (dans notre cas "o") decremente 1 fois x puis affiche
 //le caractere du milieu (dans notre cas "-" ) en decrementant 1 fois x jusqua que x soit egale a 1 puis ecrit
 //le dernier caractere de droite (dans notre cas "o") suivi dun retour a la ligne pour afficher la prochaine ligne.
-
+//NE PAS PRENDRE EN COMPTE LE COMMENTAIRE IL N'ES VALABLE QUE POUR LE RUSH00
 
 
 void	ft_print_line(char left, char center, char right, int x)
@@ -29,7 +29,7 @@ void	ft_print_line(char left, char center, char right, int x)
 	}
 	if (x == 1)
 	{
-		ft_putchar(left);
+		ft_putchar(right);
 	}
 	ft_putchar('\n');
 }
@@ -43,33 +43,33 @@ void	ft_print_line(char left, char center, char right, int x)
 //Sinon elle appelle ft_print_line pour afficher la premiere ligne et decremente y de 1 puis appelle a
 //nouveau ft_put_line en decrementant 1 fois y jusqua que y soit egale a 1 puis affiche la derniere ligne
 //en rappellant ft_put_line.
+//NE PAS PRENDRE EN COMPTE LE COMMENTAIRE IL N'ES VALABLE QUE POUR LE RUSH00
 
 
 void	rush(int x, int y)
 {
-	if (x < 1 || y<1)
+	if (x > 0 && y > 0)
 	{
-		write(1, "Erreur la valeur de x et y ne peut pas etre NULL.", 49);
-		return;
-	}
-	ft_print_line('o', '-', 'o', x);
-	y--;
-	while (y > 1)
-	{
-		ft_print_line('|', ' ', '|', x);
+
+		ft_print_line('A', 'B', 'A', x);
 		y--;
-	}
-	if (y == 1)
-	{
-		ft_print_line('o', '-', 'o', x);
+		while (y > 1)
+		{
+			ft_print_line('B', ' ', 'B', x);
+			y--;
+		}
+		if (y == 1)
+		{
+			ft_print_line('C', 'B', 'C', x);
+		}
+
 	}
 }
 
 
-
 int	main(void)
 {
-	rush(5, 5);
+	rush(10, 10);
 	return (0);
 }
 

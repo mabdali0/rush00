@@ -47,29 +47,28 @@ void	ft_print_line(char left, char center, char right, int x)
 
 void	rush(int x, int y)
 {
-	if (x < 1 || y<1)
+	if (x > 0 && y > 0)
 	{
-		write(1, "Erreur la valeur de x et y ne peut pas etre NULL.", 49);
-		return;
-	}
-	ft_print_line('o', '-', 'o', x);
-	y--;
-	while (y > 1)
-	{
-		ft_print_line('|', ' ', '|', x);
-		y--;
-	}
-	if (y == 1)
-	{
+
 		ft_print_line('o', '-', 'o', x);
+		y--;
+		while (y > 1)
+		{
+			ft_print_line('|', ' ', '|', x);
+			y--;
+		}
+		if (y == 1)
+		{
+			ft_print_line('o', '-', 'o', x);
+		}
+
 	}
 }
 
 
-
 int	main(void)
 {
-	rush(5, 5);
+	rush(1, 1);
 	return (0);
 }
 
