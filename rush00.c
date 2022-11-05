@@ -68,7 +68,7 @@ void	rush(int x, int y)
 
 int	main(void)
 {
-	rush(1, 1);
+	rush(10, 10);
 	return (0);
 }
 
